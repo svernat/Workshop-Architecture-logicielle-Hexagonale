@@ -51,7 +51,7 @@ CRUD : Create, Read (Get et GetAll), Update, Delete
 
 Le but ici est d'avoir le code le plus simple dans un seul package en une ou plusieurs classes.  
 Une seule classe ici est très bien et permettra encore mieux de voir, par la suite, l'intérêt de structurer son code.  
-Après si vous séparez les classes par objet et les routes par type d'objet, ça va aussi.  
+Après, si vous séparez les classes par objet et les routes par type d'objet, ça va aussi.  
 
 Les **ID** seront des String générés par **uuid**.  
 
