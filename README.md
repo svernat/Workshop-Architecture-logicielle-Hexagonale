@@ -67,11 +67,14 @@ Il y a d'autres inconvénients comme la difficulté d'implémenter les tests uni
 
 Essayez de voir comment implémenter les TU. Vous verrez que c'est impossible, car vous devrez instancier une base de données. Du coup, ce ne sont plus des TU.  
 
+Vous trouverez la solution dans le tag du point de départ de l'exercice suivant [Exercice-2](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-2).  
+
 ## Exercice 2
 ### Objectif
 Commencer à organiser le code sur le principe du **DDD** (Domain Driven Development)  
 
 ### Travail à réaliser
+Continuer sur le code de l'exercice 1 si vous êtes arrivés au bout ou du tag [Exercice-2](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-2).  
 Créer les packages et répartir les routes et CRUD pour chacun des objets du modèle de données :
 - article
   - article
@@ -88,6 +91,8 @@ Le code est déjà plus lisible et les modifications seront plus localisées.
 Mais techniquement, l'implémentation des tests unitaires n'a pas été facilité et les changements de technologies seront toujours aussi compliqués.  
 Nous n'avons fait ici qu'un découpage fonctionnel.  
 
+Vous trouverez la solution dans le tag du point de départ de l'exercice suivant [Exercice-3](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-3).  
+
 ## Exercice 3
 ### Objectif
 Pour chacun des domaines fonctionnels, appliquer un découpage technique sur le principe de l'architecture logicielle **Hexagonale**.  
@@ -99,6 +104,7 @@ Les points de sorties comme la base de données. Mais, aussi les appels à d'aut
 Les points d'entrées et de sorties ne sont que des **"détails"**. Dixit Bob (Robert C. Martin).
 
 ### Travail à réaliser
+Continuer sur le code de l'exercice 2 si vous êtes arrivés au bout ou du tag [Exercice-3](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-3).  
 Découper chaque domaine fonctionnel en trois packages :
 - domain
 - userside
@@ -152,12 +158,15 @@ domain dépend de serverside pour appeler le repository.
 
 Nous allons voir dans le prochain exercice comment résoudre ce problème grâce à l'inversion de dépendances.
 
+Vous trouverez la solution dans le tag du point de départ de l'exercice suivant [Exercice-4](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-4).  
+
 ## Exercice 4
 ### Objectif
 Retirer la dépendance directe entre userside et domain par l'appel de l'implémentation de la classe xxxService.  
 Et surtout entre domain et serverside.
 
 ### Travail à réaliser
+Continuer sur le code de l'exercice 3 si vous êtes arrivés au bout ou du tag [Exercice-4](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-4).  
 Dans le package domain, créer les packages api.business et api.serverside.  
 Ces packages nous permettrons d'y mettre les interfaces qui éviteront les dépendances directes vers des implémentations et surtout de permettre les inversions de dépendances.
 Et donc retirer toute dépendance du domain vers l'extérieur et notamment vers serverside.
@@ -167,11 +176,14 @@ Créer les interfaces sur les classes xxxRepository Créer les interfaces sur le
 Les classes xxxService et xxxRepository doivent implémenter ces nouvelles interfaces.
 On ajoutera le suffixe Impl aux noms des classes xxxService et xxxRepository pour ne pas les confondre avec leur interface.  
 
+Vous trouverez la solution dans le tag du point de départ de l'exercice suivant [Exercice-5](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-5).  
+
 ## Exercice 5
 ### Objectif
 Implémenter les tests unitaires. Ils sont relativement simple comme il n'y a pas de code métier.  
 
 ### Travail à réaliser
+Continuer sur le code de l'exercice 4 si vous êtes arrivés au bout ou du tag [Exercice-5](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-5).  
 Implémenter dans le répertoire des tests des fake repositories.  
 Les fake repositories doivent imiter le fonctionnement d'une base de données pour les fonctions CRUD à l'aide d'une HashMap.
 
@@ -185,11 +197,14 @@ Si inError est à vrai, le fake repository est censé renvoyer une erreur techni
 Il est beaucoup plus facile de focaliser les TU sur les fonctions métiers et de remplacer les accès à la base de données par des fake repositories.  
 Les fake repositories sont mieux que les mocks car on n'est plus obligé d'imaginer et simuler chacun des comportements. C'est implicite. Et on peut mieux vérifer les attendus.  
 
+Vous trouverez la solution dans le tag du point de départ de l'exercice suivant [Exercice-Bonus](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-Bonus).  
+
 ## Exercice Bonus
 ### Objectif
 Créer des modules maven pour chacun des domaines fonctionnels et y déplacer le code correspondant.
 
 ### Travail à réaliser
+Continuer sur le code de l'exercice 5 si vous êtes arrivés au bout ou du tag [Exercice-Bonus](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-Bonus).  
 Créer les modules maven en tant que librairies :
 - article
 - stock
@@ -203,18 +218,33 @@ Importer les nouveaux modules dans le module principal de l'application et décl
 Nous avons un découpage modulaire plus clair.  
 Les modules peuvent alors être utilisés dans une seule application monolithique ou dans des microservices très facilement.  
 
+Vous trouverez la solution dans le tag du point de départ de l'exercice suivant [Exercice-Microservices](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-Microservices).  
+
 ## Exercice Microservices
 ### Objectif
 Utiliser chacun des modules maven fonctionnels dans des microservices.
 
 ### Travail à réaliser
+Continuer sur le code de l'exercice Bonus si vous êtes arrivés au bout ou du tag [Exercice-Microservices](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-Microservices).  
 Créer des microservices en tant qu'application Spring Boot.  
 Avec un nouveau module maven pour chacun.
+
+### Conclusion
+Vous pouvez voir que grâce à ce découpage et à la modularité, on peut facilement passer d'une application monolithique à des microservices.  
+
+Vous trouverez la solution dans le tag du point de départ de l'exercice suivant [Exercice-Super-Bonus](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-Super-Bonus).  
 
 ## Exercice Super bonus
 ### Objectif
 Séparer chacun des modules fonctionnels en modules maven techniques (domain, userside, serverside).
 Retirer la dépendance à Spring sur les modules métiers (domain).
+
+### Travail à réaliser
+Continuer sur le code de l'exercice Microservices si vous êtes arrivés au bout ou du tag [Exercice-Super-Bonus](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-Super-Bonus).
+
+### Conclusion
+Vous avez là, un code bien découpé et modulaire avec une indépendance bien marquée des modules métiers.
+[Solution de l'exercice Super Bonus](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Solution-Exercice-Super-Bonus)
 
 ## Bibliographie
 ### De Robert C. Martin
