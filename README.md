@@ -44,6 +44,7 @@ Le modèle de données :
   - quantity
 
 ### Travail à réaliser 
+Récupérer le code depuis le tag [**Exercice-1**](https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale/tree/Exercice-1) du repository.   
 En tant que **développeur débutant**, n'ayant pas de notion de structuration de code et de Clean Code.  
 Vous devez générer le **CRUD** et les **routes REST** avec **Spring Boot** pour chacun des objets du modèle.
 CRUD : Create, Read (Get et GetAll), Update, Delete  
