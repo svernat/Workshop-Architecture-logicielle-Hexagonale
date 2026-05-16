@@ -15,7 +15,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>Workshop Architecture logicielle Hexagonale - Exercice 2</name>
-	<description>Exercice 2 du workshop Architecture logicielle Hexagonale.</description>
+	<description>Solution de l'exercice 2 du workshop Architecture logicielle Hexagonale.</description>
 
 	<url>https://github.com/svernat/Workshop-Architecture-logicielle-Hexagonale.git</url>
 	<licenses>
@@ -39,6 +39,9 @@
 
 	<properties>
 		<java.version>25</java.version>
+		<maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+		<springdoc-openapi.version>3.0.2</springdoc-openapi.version>
+		<hibernate-community-dialects.version>7.3.4.Final</hibernate-community-dialects.version>
 	</properties>
 
 	<dependencies>
@@ -59,7 +62,7 @@
 		<dependency>
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-community-dialects</artifactId>
-			<version>7.3.4.Final</version>
+			<version>${hibernate-community-dialects.version}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -69,7 +72,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>3.0.2</version>
+			<version>${springdoc-openapi.version}</version>
 		</dependency>
 
 		<dependency>
@@ -100,6 +103,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
 			</plugin>
 		</plugins>
 	</build>

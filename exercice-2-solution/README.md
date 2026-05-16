@@ -6,15 +6,17 @@ Commencer à organiser le code sur le principe du **DDD** (Domain Driven Develop
 Ouvrez le projet du repertoire **exercice-2**.
 
 Créer les packages et répartir les routes et CRUD pour chacun des objets du modèle de données :
-- article
+- package article
   - article
-- stock
+- package stock
   - stock
-- order
+- package order
   - order
   - articles_in_order
 
 Séparer order et articles_in_order dans des classes différentes.  
+
+Attention, order est un mot réservé en SQL. Ne pas l'utiliser en tant que nom de table ou de colonne.  
 
 ## Conclusion
 Le code est déjà plus lisible et les modifications seront plus localisées.  

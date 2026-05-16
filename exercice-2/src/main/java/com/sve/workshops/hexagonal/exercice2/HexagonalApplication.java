@@ -1,4 +1,4 @@
-package com.sve.workshops.hexagonal.exercice1;
+package com.sve.workshops.hexagonal.exercice2;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -154,7 +154,7 @@ public class HexagonalApplication {
 	// ============================================================
 
 	@Entity
-	@Table(name = "order")
+	@Table(name = "commandes")
 	public static class Order {
 		@Id
 		public String id;
