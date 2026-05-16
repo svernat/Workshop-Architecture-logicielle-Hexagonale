@@ -1,4 +1,35 @@
 # Exercice 1
+## Solution
+Tips :
+- Exemple de prompt :
+  As developer beginner, generate, in most simple way, API REST and routes for CRUD for the data model :
+```markdown
+- article
+  - id
+  - name
+  - description
+  - price
+- stock
+  - article_id
+  - quantity
+- order (commandes)
+  - id
+  - username
+  - status
+- articles_in_order
+  - order_id
+  - article_id
+  - quantity
+```
+
+id as String generated as uuid at creation.
+- Evidemment, la réponse n'est pas bonne du premier coup. Il n'arrive pas à trouver les repositories. J'ai mis l'erreur dans le chat et il m'a proposé la correction
+```code
+  @EnableJpaRepositories(
+    considerNestedRepositories = true
+  )
+```
+
 ## Objectif
 Initialiser un backend d'application Spring Boot avec un serveur d'API REST pour les objets Article, Catalogue d'articles et stock d'articles.  
 Les objets seront stockés dans une base de données SQLite.  
